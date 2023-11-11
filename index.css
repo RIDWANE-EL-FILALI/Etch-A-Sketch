@@ -1,7 +1,7 @@
 @import url('https://rsms.me/inter/inter.css');
 @font-face {
   font-family: 'cartoonish'; /* Provide a name for your custom font */
-  src: url('../font/alegreya-sans.black-italic.ttf') format('truetype'); /* Replace with the actual file path and format */
+  src: url('./font/alegreya-sans.black-italic.ttf') format('truetype'); /* Replace with the actual file path and format */
   font-weight: normal;
   font-style: normal;
 }
@@ -85,7 +85,7 @@ input[type='range']::-webkit-slider-thumb {
     background: var(--color-background);
     margin-top: calc(4 * var(--size-bezel));
     border-radius: var(--size-radius);
-    border: 3px solid var(--color-shadow, currentColor);
+    border: 3px solid #000;
     box-shadow: .5rem .5rem 0 0 #000;
     
     &--inverted {
