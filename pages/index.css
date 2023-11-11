@@ -1,0 +1,229 @@
+@import url('https://rsms.me/inter/inter.css');
+@font-face {
+  font-family: 'cartoonish'; /* Provide a name for your custom font */
+  src: url('../font/alegreya-sans.black-italic.ttf') format('truetype'); /* Replace with the actual file path and format */
+  font-weight: normal;
+  font-style: normal;
+}
+:root {
+  --color-light: #fff;
+  --color-dark: #212121;
+  --color-signal: #fab700;
+  --primary-dark: #000;
+  --primary-light: #ededed;
+  --secondary-light: #fefefe;
+  
+  --color-background: var(--color-light);
+  --color-text: var(--color-dark);
+  --color-accent: var(--color-signal);
+  
+  --size-bezel: .5rem;
+  --size-radius: 4px;
+  
+  line-height: 1.4;
+  
+  font-family: 'Inter', sans-serif;
+  font-size: calc(.6rem + .4vw);
+  color: var(--color-text);
+  background: var(--color-signal);
+  font-weight: 300;
+  padding: 0 calc(var(--size-bezel) * 3);
+}
+.header {
+  text-align: center;
+}
+
+.title h1 {
+  font-size: 3rem; /* Adjust font size as needed */
+  font-family: 'cartoonish';
+  margin: 0;
+}
+
+.state {
+  font-size: 20px;
+}
+
+.size-value {
+  margin-bottom: -30px;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  background-color: var(--color-signal);
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  height: 10px;
+  border: 1px solid var(--primary-dark);
+  border-radius: 25px;
+  background: var(--secondary-light);
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 25px;
+  margin-top: -8px;
+  background: var(--primary-dark);
+}
+
+
+.flex-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+
+.board{
+    width: 700px;
+    height: 700px;
+    display:grid;
+    box-shadow: inset -3em 3em rgba(0,0,0,0), 0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0,0,0,0);
+    background: var(--color-background);
+    margin-top: calc(4 * var(--size-bezel));
+    border-radius: var(--size-radius);
+    border: 3px solid var(--color-shadow, currentColor);
+    box-shadow: .5rem .5rem 0 0 #000;
+    
+    &--inverted {
+      --color-background: var(--color-dark);
+      color: var(--color-light);
+      --color-shadow: var(--color-accent);
+    }
+    
+    &--accent {
+      --color-background: var(--color-signal);
+      --color-accent: var(--color-light);
+      color: var(--color-dark);
+    }
+    
+    *:first-child {
+      margin-top: 0;
+    }
+}
+
+.board:hover {
+  cursor: pointer;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 300px;
+  min-height: 300px;
+  width: 60vw;
+  height: 60vw;
+  max-width: 600px;
+  max-height: 600px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  width: 200px;
+}
+
+.button{
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #111;
+  border-radius: 8px;
+  box-sizing: border-box;
+  color: #111;
+  cursor: pointer;
+  display: flex;
+  font-family: Inter,sans-serif;
+  font-size: 20px;
+  height: 48px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button:after {
+  background-color: #111;
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 48px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: -2px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.button:hover:after {
+  transform: translate(0, 0);
+}
+
+.button:active {
+  background-color: #fff;
+  outline: 0;
+}
+
+.button:hover {
+  outline: 0;
+}
+
+@media (min-width: 768px) {
+  .button {
+    padding: 0 40px;
+  }
+}
+
+.cuphead-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 20px; /* Adjust the margin as needed */
+}
+
+.cuphead {
+    width: 200px; /* Adjust the width as needed */
+    height: auto;
+    border-radius: 8px; /* Optional: Add a border radius for rounded corners */
+}
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f8f8f8; /* Optional: Add a background color to the footer */
+  text-align: center;
+  padding: 10px; /* Optional: Add padding for better visibility */
+}
+
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+footer p {
+  margin: 0;
+}
+
+.github-icon {
+  width: 30px; /* Adjust the width as needed */
+  height: auto;
+  margin-left: 10px; /* Adjust the margin as needed */
+}
